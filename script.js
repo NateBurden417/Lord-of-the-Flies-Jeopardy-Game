@@ -175,6 +175,7 @@ function checkAnswer() {
   let selectedAnswerText = "";
   questionsanswered += 1;
   if (answer1) {
+    document.getElementById("qoverlay_checkbutton").style.display = "none";
     if (correct == 1) {
       document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
@@ -203,6 +204,7 @@ function checkAnswer() {
       },2000)
     }
   } else if (answer2) {
+    document.getElementById("qoverlay_checkbutton").style.display = "none";
     if (correct == 2) {
       document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
@@ -231,6 +233,7 @@ function checkAnswer() {
       },2000)
     }
   } else if (answer3) {
+    document.getElementById("qoverlay_checkbutton").style.display = "none";
     if (correct == 3) {
       document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
@@ -259,6 +262,7 @@ function checkAnswer() {
       },2000)
     }
   } else if (answer4) {
+    document.getElementById("qoverlay_checkbutton").style.display = "none";
     if (correct == 4) {
       document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
