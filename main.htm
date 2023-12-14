@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeopardy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- <div class="loader"></div> -->
+  <div id="qoverlay">
+    <h1 id="qoverlay_question">Q</h1>
+    <h3 id="qoverlay_pointval">pts</h3>
+    <center>
+
+      <input type="radio" id="Q1" name="qoverlay_answer" value="1" class="input"><label id="qoverlay_q1text"
+        for="Q1"></label><br>
+      <input type="radio" id="Q2" name="qoverlay_answer" value="2" class="input"><label id="qoverlay_q2text"
+        for="Q2"></label><br>
+      <input type="radio" id="Q3" name="qoverlay_answer" value="3" class="input"><label id="qoverlay_q3text"
+        for="Q3"></label><br>
+      <input type="radio" id="Q4" name="qoverlay_answer" value="4" class="input"><label id="qoverlay_q4text"
+        for="Q4"></label>
+      <br>
+      <br>
+      <!-- <button id="qoverlay_checkbutton" onclick="checkAnswer()">
+      Check Answer
+    </button> -->
+      <button onclick="checkAnswer()" id="qoverlay_checkbutton" class="animated-button">
+        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+          </path>
+        </svg>
+        <span class="text">Check Answer</span>
+        <span class="circle"></span>
+        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+          </path>
+        </svg>
+      </button>
+
+
+      <!-- <button id="qoverlay_checkbutton" onclick="checkAnswer()">Check</button> -->
+    </center>
+  </div>
+  <div class="container">
+    <div class="category">WHO IS IT</div>
+    <div class="category">WHAT HAPPENED</div>
+    <div class="category">WHO SAID IT</div>
+    <div class="category">THE ISSUES</div>
+    <div class="category">ONION LAYERS</div>
+    <div class="category">THE PLOT</div>
+    <div id="WII-100" class="tile" onclick="revealAnswer('1', 100)">100</div>
+    <div id="WH-100" class="tile" onclick="revealAnswer('2', 100)">100</div>
+    <div id="WSI-100" class="tile" onclick="revealAnswer('3', 100)">100</div>
+    <div id="TI-100" class="tile" onclick="revealAnswer('4', 100)">100</div>
+    <div id="OL-100" class="tile" onclick="revealAnswer('5', 100)">100</div>
+    <div id="TP-100" class="tile" onclick="revealAnswer('6', 100)">100</div>
+
+    <div id="WII-200" class="tile" onclick="revealAnswer('1', 200)">200</div>
+    <div id="WH-200" class="tile" onclick="revealAnswer('2', 200)">200</div>
+    <div id="WSI-200" class="tile" onclick="revealAnswer('3', 200)">200</div>
+    <div id="TI-200" class="tile" onclick="revealAnswer('4', 200)">200</div>
+    <div id="OL-200" class="tile" onclick="revealAnswer('5', 200)">200</div>
+    <div id="TP-200" class="tile" onclick="revealAnswer('6', 200)">200</div>
+
+    <div id="WII-300" class="tile" onclick="revealAnswer('1', 300)">300</div>
+    <div id="WH-300" class="tile" onclick="revealAnswer('2', 300)">300</div>
+    <div id="WSI-300" class="tile" onclick="revealAnswer('3', 300)">300</div>
+    <div id="TI-300" class="tile" onclick="revealAnswer('4', 300)">300</div>
+    <div id="OL-300" class="tile" onclick="revealAnswer('5', 300)">300</div>
+    <div id="TP-300" class="tile" onclick="revealAnswer('6', 300)">300</div>
+
+    <div id="WII-400" class="tile" onclick="revealAnswer('1', 400)">400</div>
+    <div id="WH-400" class="tile" onclick="revealAnswer('2', 400)">400</div>
+    <div id="WSI-400" class="tile" onclick="revealAnswer('3', 400)">400</div>
+    <div id="TI-400" class="tile" onclick="revealAnswer('4', 400)">400</div>
+    <div id="OL-400" class="tile" onclick="revealAnswer('5', 400)">400</div>
+    <div id="TP-400" class="tile" onclick="revealAnswer('6', 400)">400</div>
+
+    <div id="WII-500" class="tile" onclick="revealAnswer('1', 500)">500</div>
+    <div id="WH-500" class="tile" onclick="revealAnswer('2', 500)">500</div>
+    <div id="WSI-500" class="tile" onclick="revealAnswer('3', 500)">500</div>
+    <div id="TI-500" class="tile" onclick="revealAnswer('4', 500)">500</div>
+    <div id="OL-500" class="tile" onclick="revealAnswer('5', 500)">500</div>
+    <div id="TP-500" class="tile" onclick="revealAnswer('6', 500)">500</div>
+    <br>
+    <p id="points">Points: 0</p>
+  </div>
+  <center>
+    <h1 id="finalptstxt">Final Points: ${pts}</h1>
+  </center>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
