@@ -114,6 +114,7 @@ function questionShow(points, question, ans1, ans2, ans3, ans4, numanscorrect) {
   document.getElementById("qoverlay_q3text").innerHTML = ans3
   document.getElementById("qoverlay_q4text").innerHTML = ans4
   document.getElementById("points").innerHTML = "Points: " + plrpoints;
+  document.getElementById("qoverlay_checkbutton").style.display = "block";
 }
 // function checkAnswer() {
 //   if (document.getElementById("Q1").checked || document.getElementById("Q2").checked || document.getElementById("Q3").checked || document.getElementById("Q4").checked) {
@@ -175,6 +176,7 @@ function checkAnswer() {
   questionsanswered += 1;
   if (answer1) {
     if (correct == 1) {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
       selectedAnswerText = "Correct!";
       document.getElementById("qoverlay_pointval").innerHTML = "Added "+currentqpoints+".";
@@ -187,6 +189,7 @@ function checkAnswer() {
         },1000);
       },2000)
     } else {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints -= currentqpoints;
       selectedAnswerText = "Sorry, Incorrect.";
       document.getElementById("qoverlay_pointval").innerHTML = "Deducted "+currentqpoints+".";
@@ -201,6 +204,7 @@ function checkAnswer() {
     }
   } else if (answer2) {
     if (correct == 2) {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
       selectedAnswerText = "Correct!";
       document.getElementById("qoverlay_pointval").innerHTML = "Added "+currentqpoints+".";
@@ -213,6 +217,7 @@ function checkAnswer() {
         },1000);
       },2000)
     } else {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints -= currentqpoints;
       selectedAnswerText = "Sorry, Incorrect.";
       document.getElementById("qoverlay_pointval").innerHTML = "Deducted "+currentqpoints+".";
@@ -227,6 +232,7 @@ function checkAnswer() {
     }
   } else if (answer3) {
     if (correct == 3) {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
       selectedAnswerText = "Correct!";
       document.getElementById("qoverlay_pointval").innerHTML = "Added "+currentqpoints+".";
@@ -239,6 +245,7 @@ function checkAnswer() {
         },1000);
       },2000)
     } else {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints -= currentqpoints;
       selectedAnswerText = "Sorry, Incorrect.";
       document.getElementById("qoverlay_pointval").innerHTML = "Deducted "+currentqpoints+".";
@@ -253,6 +260,7 @@ function checkAnswer() {
     }
   } else if (answer4) {
     if (correct == 4) {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints += currentqpoints;
       selectedAnswerText = "Correct!";
       document.getElementById("qoverlay_pointval").innerHTML = "Added "+currentqpoints+".";
@@ -265,6 +273,7 @@ function checkAnswer() {
         },1000);
       },2000)
     } else {
+      document.getElementById("qoverlay_checkbutton").style.display = "none";
       plrpoints -= currentqpoints;
       selectedAnswerText = "Sorry, Incorrect.";
       document.getElementById("qoverlay_pointval").innerHTML = "Deducted "+currentqpoints+".";
